@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SK Trading | Premium Store</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f6f6f6;
+    }
+    h1, h2, h3, .brand-font {
+      font-family: 'Playfair Display', serif;
+    }
+    .navbar {
+      background: #000;
+    }
+    .navbar .nav-link, .navbar-brand {
+      color: #fff !important;
+    }
+    .hero {
+      background: linear-gradient(135deg, #000, #222);
+      color: #fff;
+      padding: 90px 20px;
+      text-align: center;
+    }
+    .category-card img {
+      height: 220px;
+      object-fit: cover;
+    }
+    .product-card img {
+      height: 260px;
+      object-fit: cover;
+    }
+    .price {
+      font-weight: 600;
+      color: #c9a24d;
+    }
+    footer {
+      background: #000;
+      color: #aaa;
+      padding: 30px 0;
+    }
+    .lang-btn {
+      border: 1px solid #fff;
+      color: #fff;
+      background: transparent;
+      font-size: 14px;
+      padding: 4px 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand brand-font" href="#">SK Trading</a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#categories" data-en="Categories" data-am="ምድቦች">Categories</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products" data-en="Products" data-am="ምርቶች">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact" data-en="Contact" data-am="አግኙን">Contact</a></li>
+        <li class="nav-item ms-3">
+          <button class="lang-btn" onclick="toggleLang()">AM</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero mt-5">
+  <div class="container">
+    <h1 data-en="Premium Beauty & Style" data-am="ፕሪሚየም ውበት እና ቅጥ">Premium Beauty & Style</h1>
+    <p class="lead" data-en="Cosmetics • Perfumes • Watches" data-am="ኮስሜቲክስ • ሽቶዎች • ሰዓቶች">Cosmetics • Perfumes • Watches</p>
+    <a href="#categories" class="btn btn-outline-light btn-lg mt-3" data-en="Explore" data-am="ይመልከቱ">Explore</a>
+  </div>
+</section>
+
+<!-- Categories -->
+<section id="categories" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4 brand-font" data-en="Shop by Category" data-am="በምድብ ይግዙ">Shop by Category</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card category-card shadow-sm">
+          <img src="https://via.placeholder.com/500x400" class="card-img-top" alt="Cosmetics">
+          <div class="card-body text-center">
+            <h5 data-en="Cosmetics" data-am="ኮስሜቲክስ">Cosmetics</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card category-card shadow-sm">
+          <img src="https://via.placeholder.com/500x400" class="card-img-top" alt="Perfumes">
+          <div class="card-body text-center">
+            <h5 data-en="Perfumes" data-am="ሽቶዎች">Perfumes</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card category-card shadow-sm">
+          <img src="https://via.placeholder.com/500x400" class="card-img-top" alt="Watches">
+          <div class="card-body text-center">
+            <h5 data-en="Watches" data-am="ሰዓቶች">Watches</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Category Pages Links -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="brand-font mb-4" data-en="Browse Categories" data-am="ምድቦችን ይመልከቱ">Browse Categories</h2>
+    <a href="cosmetics.html" class="btn btn-dark m-2">Cosmetics</a>
+    <a href="perfumes.html" class="btn btn-dark m-2">Perfumes</a>
+    <a href="watches.html" class="btn btn-dark m-2">Watches</a>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-5">
+  <div class="container text-center">
+    <h2 class="brand-font" data-en="Contact Us" data-am="አግኙን">Contact Us</h2>
+    <p>Phone: +251 996 772 909</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container text-center">
+    <p>© 2025 SK Trading. </p>
+  </div>
+</footer>
+
+<script>
+  let currentLang = 'en';
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'am' : 'en';
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + currentLang);
+    });
+    document.querySelector('.lang-btn').textContent = currentLang === 'en' ? 'AM' : 'EN';
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
